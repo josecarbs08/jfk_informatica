@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra Pixelada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 PIZARRA PIXELADA</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="colorPicker">Color:</label>
+                <input type="color" id="colorPicker" value="#FFFFFF">
+                <div class="color-presets">
+                    <button class="color-btn" style="background-color: #FFFFFF;" data-color="#FFFFFF"></button>
+                    <button class="color-btn" style="background-color: #FF0000;" data-color="#FF0000"></button>
+                    <button class="color-btn" style="background-color: #00FF00;" data-color="#00FF00"></button>
+                    <button class="color-btn" style="background-color: #0000FF;" data-color="#0000FF"></button>
+                    <button class="color-btn" style="background-color: #FFFF00;" data-color="#FFFF00"></button>
+                    <button class="color-btn" style="background-color: #FF00FF;" data-color="#FF00FF"></button>
+                    <button class="color-btn" style="background-color: #FF7700;" data-color="#FF7700"></button>
+                    <button class="color-btn" style="background-color: #1C1C1C;" data-color="#1C1C1C"></button>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label for="brushSize">Grosor: <span id="sizeValue">5</span>px</label>
+                <input type="range" id="brushSize" min="1" max="50" value="5">
+            </div>
+
+            <div class="control-group">
+                <button id="clearBtn" class="btn-clear">🗑️ BORRAR TODO</button>
+            </div>
+        </div>
+
+        <canvas id="drawingCanvas"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #FF1744 0%, #FF6E40 25%, #FFCA28 50%, #FF6E40 75%, #D32F2F 100%);
+    background-size: 400% 400%;
+    animation: sunset 8s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@keyframes sunset {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(28, 28, 28, 0.95);
+    border: 5px solid #FF1744;
+    box-shadow: 0 0 30px rgba(255, 23, 68, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 100%;
+}
+
+h1 {
+    color: #FFFF00;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 3px 3px 0px #FF1744, 6px 6px 0px rgba(0, 0, 0, 0.8);
+    letter-spacing: 3px;
+    animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 54%, 56%, 100% {
+        text-shadow: 3px 3px 0px #FF1744, 6px 6px 0px rgba(0, 0, 0, 0.8);
+    }
+    20%, 24%, 55% {
+        text-shadow: 2px 2px 0px #FFFF00, 4px 4px 0px #FF7700;
+    }
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 23, 68, 0.1);
+    border: 3px solid #FF7700;
+    border-radius: 10px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+label {
+    color: #FFFF00;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-shadow: 2px 2px 0px #FF1744;
+}
+
+#colorPicker {
+    width: 80px;
+    height: 80px;
+    border: 4px solid #FFFF00;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.6);
+}
+
+.color-presets {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.color-btn {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #FFFF00;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.color-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.8);
+}
+
+#brushSize {
+    width: 200px;
+    height: 8px;
+    cursor: pointer;
+    accent-color: #FF1744;
+}
+
+#sizeValue {
+    color: #FF1744;
+    font-weight: bold;
+}
+
+.btn-clear {
+    background: linear-gradient(135deg, #FF1744, #D32F2F);
+    color: #FFFF00;
+    border: 3px solid #FFFF00;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 23, 68, 0.8);
+    transition: all 0.3s;
+    font-family: 'Courier New', monospace;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+}
+
+.btn-clear:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(255, 255, 0, 0.8), 0 5px 15px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #FF6E40, #FF1744);
+}
+
+.btn-clear:active {
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(255, 23, 68, 0.6);
+}
+
+#drawingCanvas {
+    display: block;
+    background: #1C1C1C;
+    border: 5px solid #FFFF00;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 23, 68, 0.6);
+    width: 100%;
+    height: 500px;
+    cursor: crosshair;
+    border-radius: 10px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#drawingCanvas:active {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 255, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #drawingCanvas {
+        height: 300px;
+    }
+}
