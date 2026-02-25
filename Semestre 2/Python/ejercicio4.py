@@ -1,4 +1,4 @@
-day = int(input('Ingrese un día (en minúsculas): '))
+day = input('Ingrese un día (en minúsculas): ')
 
 if day == 'lunes':
     print('Hoy es lunes, ¡comienza la semana!')
