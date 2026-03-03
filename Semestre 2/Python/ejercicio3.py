@@ -2,7 +2,6 @@
 
 print("Bienvenido al programa de comidas")
 hora = int(input("Ingrese la hora del día en formato de 24 horas: "))
-
 match hora:
     case 8:
         print("Es hora del desayuno")
