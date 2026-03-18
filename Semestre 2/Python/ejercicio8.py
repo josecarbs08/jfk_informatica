@@ -8,7 +8,7 @@ elif destino == "Guadalajara":
 elif destino == "Cancún":
     pasaje = 1200
 else:    print("Destino no válido.")
-
+q
 
 if edad >= 0 and edad <= 3:
     descuento = 1
