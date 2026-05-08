@@ -5,7 +5,7 @@ ventana.title("Juego con imagen")
 
 ventana.addshape("spider.gif")
 
-personaje = turtle.Turtle()  # ← CORREGIDO: crear instancia en lugar de usar el módulo
+personaje = turtle.Turtle()  
 personaje.shape("spider.gif")
 personaje.penup()
 
