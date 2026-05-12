@@ -6,7 +6,7 @@ color("yellow")
 circle(10)
 
 
-for i in range(20):
+for i in range(400):
     circle(10*1)
     left(i)
 
